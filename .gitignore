@@ -11,12 +11,9 @@ __pycache__/
 *.env
 *.venv
 
-# Jupyter Notebooks
-.ipynb_checkpoints/
-Notebooks/.ipynb_checkpoints/
 
-# Dataset files
-Dataset/
+
+
 
 # Node.js
 client/node_modules/

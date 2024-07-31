@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./screens/Footer";
 import Home from "./screens/Home";
-import Contact from "./screens/Contact";
+
 import CropPrice from "./screens/CropPrice";
 import SoilCrop from "./screens/SoilCrop";
 import Prediction from "./screens/Prediction";
@@ -21,6 +21,11 @@ import Signup from "./screens/Signup";
 import Inspect from "./screens/Inspect";
 import Trade from "./screens/Trade";
 import Scheme from "./screens/Scheme";
+import ChatBot from "./screens/ChatBot";
+import Profile from "./screens/Profile";
+import SellCrop from "./screens/SellCrop";
+import PlantDisease from "./screens/PlantDisease";
+
 function App() {
   const location = useLocation();
   const isLandingOrLogin =
@@ -37,11 +42,12 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/inspect" element={<Inspect />} />
           <Route path="/Trade" element={<Trade />} />
           <Route path="/about" element={<About />} />
           <Route path="/prediction" element={<Prediction />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/plantdisease" element={<Prediction />} />
           <Route path="/cropanalysis" element={<CropAnalysis />} />
           <Route path="/locationcropprediction" element={<CropLocation />} />
           <Route path="/soilanalysis" element={<SoilFertility />} />
@@ -50,6 +56,8 @@ function App() {
           <Route path="/priceforecast/:crop" element={<CropPrice />} />
           <Route path="/weather" element={<Weather />} />
           <Route path="/scheme" element={<Scheme />} />
+          <Route path="/chatbot" element={<ChatBot />} />
+          <Route path="/sellcrop" element={<SellCrop />} />
         </Routes>
         {/* {!isLandingOrLogin && <Footer />} */}
       </div>

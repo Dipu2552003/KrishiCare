@@ -61,10 +61,10 @@ const content = {
   landingPage: {
     title: "Ministry of Agriculture & Farmers' Welfare",
     logo: "images/patta.png",
-    heading: "KisanCare",
+    heading: "KrishiCare",
     subheading: "Your Trusted Digital Farming Companion.",
     description:
-      "Empowering Farmers with Agricultural Wisdom: KisanCare - Unlock the doors to agricultural enlightenment with KisanCare. Navigate the intricate world of farming effortlessly and empower yourself with agricultural wisdom at your fingertips. From understanding best farming practices to decoding agricultural policies, KisanCare is your go-to source for clarity in the complex world of agriculture.",
+      "Empowering Farmers with Agricultural Wisdom: KrishiCare - Unlock the doors to agricultural enlightenment with KrishiCare. Navigate the intricate world of farming effortlessly and empower yourself with agricultural wisdom at your fingertips. From understanding best farming practices to decoding agricultural policies, KrishiCare is your go-to source for clarity in the complex world of agriculture.",
     buttons: [
       {
         text: "Signup",
@@ -98,7 +98,7 @@ const content = {
     image: "images/lp.jpg",
   },
   hero: {
-    firstName: "KisanCare",
+    firstName: "KrishiCare",
     LastName:
       "Empowering Indian Farmers with Cutting-Edge AI & ML: Your Comprehensive Solution for Better Farming Practices, Enhanced Productivity, and Fair Rewards.Feel free to adjust it as needed!",
     btnArray: ["A Programmer", "AI & ML Enthusiast"],
@@ -110,13 +110,13 @@ const content = {
   },
   aboutus: {
     content1:
-      "KisanCare is an innovative project aimed at revolutionizing the way farmers choose crops and make decisions about their farming operations. With the use of cutting-edge technology and machine learning algorithms, KisanCare provides farmers with a comprehensive and accurate picture of their farm's potential. This includes soil analysis, location-based data, and rainfall information, which can be used to determine the most suitable crops for a given area.",
+      "KrishiCare is a transformative platform designed to help farmers make informed decisions and become more self-reliant. By integrating advanced technology and machine learning algorithms, KrishiCare provides a detailed view of farming based on soil analysis, weather patterns, local climate, seasonal changes, and crop prices. This comprehensive approach enables farmers to select the most suitable crops for their environment and make strategic decisions to maximize their earnings.",
     content2:
-      "KisanCare not only provides recommendations on the best crops to plant but also provides farmers with an estimated crop price forecast. This helps farmers make informed decisions about their crop choices, ensuring that they can maximize their profits. Additionally, the crop analytics offered by KisanCare helps farmers track the progress of their crops over time and make adjustments as necessary.",
+      "In addition to recommending the best crops to plant, KrishiCare offers forecasts for crop prices, helping farmers plan their planting and harvesting schedules effectively. The platform also includes tools for monitoring crop health and progress, allowing farmers to make necessary adjustments throughout the growing season. By equipping farmers with these insights, KrishiCare ensures they are well-informed and capable of managing their farming operations independently.",
     content3:
-      "The algorithms used by KisanCare are constantly learning and improving, taking into account real-time data and the latest research to provide farmers with the most up-to-date information. This helps to ensure that farmers have access to the most accurate information, reducing the risk of crop failure and increasing the chances of success.",
+      "KrishiCare goes beyond crop management by offering a complete solution that supports farmers from cultivation to sale. Farmers can sell their produce through the platform, while inspectors use advanced deep learning technology to assess crop quality and detect diseases through image analysis. Once the crops pass inspection, traders can purchase them directly. This streamlined process enables farmers to control their operations and income, ensuring a more efficient and profitable farming experience.",
     content4:
-      "KisanCare also offers a user-friendly interface that makes it easy for farmers to access and understand the information they need. Whether you are a seasoned farmer or just starting out, KisanCare has the tools and resources you need to make informed decisions about your crops and farming operations.",
+      "With an easy-to-use interface, KrishiCare is designed for all users—farmers, inspectors, and traders. Farmers can manage their crops and sales, inspectors can perform quality checks, and traders can source high-quality produce. KrishiCare provides a comprehensive, user-friendly platform that supports every aspect of the farming process, making it a valuable resource for achieving greater independence and success in agriculture.",
   },
   Contact: {
     title: "Contact Me",
@@ -155,32 +155,26 @@ const content = {
     solutions_content: [
       {
         org: "Crop prediction based on locality and Seasons",
-        logo: Location,
+        logo: "images/cropseason.png",
         link: "/cropanalysis",
         work: "Crop prediction based on locality and seasons is a crucial aspect of modern farming. By utilizing local climate data and historical weather patterns, farmers can make informed decisions on which crops to grow, leading to higher yields and improved profitability.",
       },
       {
         org: "Crop prediction based on Soil fertility",
-        logo: SoilImg,
+        logo: "images/cropsoil.png",
         link: "/soilanalysis",
         work: "Agriculture forms a major occupation in countries like India. Hence, achieving good yield in the crops grown by farmers is the major concern. Various environmental factors have a significant impact on the crop yield. One such component that contributes majorly to the crop yield is soil.",
       },
       {
         org: "Crop Price Prediction",
-        logo: Priceimg,
+        logo: "images/price.png",
         link: "/priceforecast",
         work: "Crop price estimation and evaluation are done to take an intelligent decision before farming a specific type of crop. Predicting the price of a crop will help in taking better decisions which results in minimizing the loss and managing the risk of price fluctuations.",
       },
       {
-        org: "Weather-prediction",
-        logo: Priceimg,
-        link: "/weather",
-        work: "Accurate weather predictions are crucial for farmers to make informed decisions on planting and harvesting. By leveraging weather forecasts, farmers can optimize their crop management strategies, reduce the risk of adverse weather conditions, and enhance overall yield and productivity",
-      },
-      {
-        org: "Ai voice Chatbot",
-        logo: Priceimg,
-        link: "/priceforecast",
+        org: "Plant Disease Detection",
+        logo: "images/plantdisease.png",
+        link: "/chatbot",
         work: "An AI-powered chatbot with voice capabilities offers farmers real-time assistance and expert advice, making it easier to address farming challenges. With natural language processing and voice recognition, farmers can quickly access information, receive personalized recommendations, and manage their agricultural operations more efficiently.",
       },
     ],

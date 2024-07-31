@@ -1,21 +1,28 @@
-import React, { useState, useEffect, Suspense, lazy } from "react";
+import React, { useState, useEffect } from "react";
 
 const LandingPage = () => {
-  const [language, setLanguage] = useState("hi");
+  const [language, setLanguage] = useState("en");
   const [content, setContent] = useState(null);
 
   useEffect(() => {
     const loadContent = async () => {
       let contentModule;
-      switch (language) {
-        case "en":
-          contentModule = await import("../utils/content");
-          break;
-        case "hi":
-          contentModule = await import("../utils/content_hindi");
-          break;
+      try {
+        switch (language) {
+          case "en":
+            contentModule = await import("../utils/content");
+            break;
+          case "hi":
+            contentModule = await import("../utils/content_hindi");
+            break;
+          // Add cases for Marathi and Tamil if they exist
+          default:
+            contentModule = await import("../utils/content"); // Fallback to English
+        }
+        setContent(contentModule.default);
+      } catch (error) {
+        console.error("Error loading content:", error);
       }
-      setContent(contentModule.default);
     };
 
     loadContent();

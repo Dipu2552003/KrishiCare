@@ -5,7 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
 function Navbar() {
   const [navOpen, setNavOpen] = useState(false);
@@ -116,6 +116,12 @@ function Navbar() {
             <h6 className="text-teal-200 font-Merriweather md:text-lg">
               Chatbot
             </h6>
+          </Link>
+          <Link to="/login">
+            <FontAwesomeIcon
+              icon={faSignOutAlt}
+              className="w-8 h-8 text-white"
+            />
           </Link>
         </div>
       </div>

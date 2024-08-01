@@ -7,7 +7,7 @@ const getInitialCrops = () => {
         {
           id: 1,
           image: "images/crop1.PNG",
-          farmerName: "John Doe",
+          farmerName: "Ravi Kumar",
           cropName: "Wheat",
           location: "Farmville",
           verified: false,
@@ -15,10 +15,10 @@ const getInitialCrops = () => {
         },
         {
           id: 2,
-          image: "images/crop2.PNG",
-          farmerName: "John Doe",
-          cropName: "Wheat",
-          location: "Farmville",
+          image: "images/crop2.jpg",
+          farmerName: "Ravi Kumar",
+          cropName: "Tomato",
+          location: "Pune",
           verified: false,
           price: "60",
         },

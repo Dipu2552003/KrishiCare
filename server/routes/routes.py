@@ -12,7 +12,7 @@ from controllers.plantDisease import PlantDisease
 
 def crop_prediction_routes(api):
     api.add_resource(SoilAnalysis, '/api/soilcrop')
-    api.add_resource(soilcrop, '/api/soilcrop')
+    api.add_resource(soilcrop, '/api/soilprediction')
     api.add_resource(GetLocations, '/api/getlocations')
     api.add_resource(CropAnalysis, '/api/cropanalysis')
     api.add_resource(cropLocation, '/api/croplocation')

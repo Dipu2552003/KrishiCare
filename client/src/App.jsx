@@ -47,7 +47,7 @@ function App() {
           <Route path="/Trade" element={<Trade />} />
           <Route path="/about" element={<About />} />
           <Route path="/prediction" element={<Prediction />} />
-          <Route path="/plantdisease" element={<Prediction />} />
+          <Route path="/plantdisease" element={<PlantDisease />} />
           <Route path="/cropanalysis" element={<CropAnalysis />} />
           <Route path="/locationcropprediction" element={<CropLocation />} />
           <Route path="/soilanalysis" element={<SoilFertility />} />

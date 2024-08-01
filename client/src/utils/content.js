@@ -174,7 +174,7 @@ const content = {
       {
         org: "Plant Disease Detection",
         logo: "images/plantdisease.png",
-        link: "/chatbot",
+        link: "/plantdisease",
         work: "An AI-powered chatbot with voice capabilities offers farmers real-time assistance and expert advice, making it easier to address farming challenges. With natural language processing and voice recognition, farmers can quickly access information, receive personalized recommendations, and manage their agricultural operations more efficiently.",
       },
     ],

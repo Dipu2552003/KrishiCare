@@ -6,11 +6,13 @@ const PlantDisease = () => {
   const [prediction, setPrediction] = useState(null);
   const [error, setError] = useState(null);
   const [previewImage, setPreviewImage] = useState(null);
+  const [imageUploaded, setImageUploaded] = useState(false);
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     if (file) {
       setSelectedImage(file);
+      setImageUploaded(true); // Set imageUploaded to true
       const reader = new FileReader();
       reader.onload = (e) => setPreviewImage(e.target.result);
       reader.readAsDataURL(file);
@@ -56,8 +58,8 @@ const PlantDisease = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen flex items-center justify-center py-12 px-4">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-4xl flex items-center justify-between">
+    <div className="bg-gray-100 min-h-screen flex items-center justify-center py-12 px-4 overflow-hidden max-w-full">
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-4xl flex items-center justify-between max-w-screen-xl">
         <div className="flex-1 pr-6">
           <h2 className="text-center text-2xl font-bold text-black mb-6">
             Find out which disease has been caught by your plant
@@ -76,7 +78,7 @@ const PlantDisease = () => {
               />
               {previewImage && (
                 <img
-                  className="w-full mt-4 rounded-md shadow-md"
+                  className="max-w-xl container mt-4 rounded-md shadow-md"
                   src={previewImage}
                   alt="Preview"
                 />
@@ -102,13 +104,15 @@ const PlantDisease = () => {
             )}
           </form>
         </div>
-        <div className="flex-none w-1/3">
-          <img
-            className="w-full h-auto rounded-md shadow-md"
-            src="/images/ani.gif"
-            alt="Animated"
-          />
-        </div>
+        {!imageUploaded && (
+          <div className="flex-none w-1/3">
+            <img
+              className="w-full h-auto rounded-md shadow-md"
+              src="/images/ani.gif"
+              alt="Animated"
+            />
+          </div>
+        )}
       </div>
     </div>
   );

@@ -1,84 +1,38 @@
-import React, { useState, useEffect } from "react";
-import Cookies from "js-cookie";
+import React, { useState } from "react";
 
 const SellCrop = () => {
   const [crop, setCrop] = useState({
-    id: "",
-    image: "",
     farmerName: "",
     cropName: "",
     location: "",
-    verified: false,
     price: "",
+    image: null,
   });
-  const [imageFile, setImageFile] = useState(null);
+
   const [crops, setCrops] = useState([]);
 
-  // Function to handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Generate a unique ID for the crop
-    const cropId = new Date().getTime();
-    const cropData = { ...crop, id: cropId };
-
-    if (imageFile) {
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        cropData.image = reader.result;
-
-        // Store crop data in cookies
-        Cookies.set(`crop_${cropId}`, JSON.stringify(cropData), { expires: 7 });
-        console.log("Cookie set for crop:", cropData); // Log crop data being set
-
-        updateCrops();
+        setCrop({ ...crop, image: reader.result });
       };
-      reader.readAsDataURL(imageFile);
-    } else {
-      Cookies.set(`crop_${cropId}`, JSON.stringify(cropData), { expires: 7 });
-      console.log("Cookie set for crop:", cropData); // Log crop data being set
-      updateCrops();
+      reader.readAsDataURL(file);
     }
+  };
 
-    // Clear the form
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setCrops([...crops, { ...crop, id: Date.now(), verified: false }]);
     setCrop({
-      id: "",
-      image: "",
       farmerName: "",
       cropName: "",
       location: "",
-      verified: false,
       price: "",
+      image: null,
     });
-    setImageFile(null);
-
-    alert("Crop information saved successfully!");
   };
-
-  // Function to handle image file change
-  const handleImageChange = (e) => {
-    setImageFile(e.target.files[0]);
-  };
-
-  // Function to update crops from cookies
-  const updateCrops = () => {
-    const allCrops = [];
-    let i = 1;
-    let cropData = Cookies.get(`crop_${i}`);
-    while (cropData) {
-      allCrops.push(JSON.parse(cropData));
-      console.log(`Loaded crop ${i}:`, JSON.parse(cropData)); // Log each loaded crop
-      i++;
-      cropData = Cookies.get(`crop_${i}`);
-    }
-    setCrops(allCrops);
-    console.log("Crops updated:", allCrops); // Log crops when updated
-  };
-
-  // Load crops on component mount
-  useEffect(() => {
-    updateCrops();
-  }, []);
 
   return (
     <div className="p-6 max-w-4xl mx-auto">

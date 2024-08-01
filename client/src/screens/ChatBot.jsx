@@ -14,8 +14,11 @@ const ChatBot = () => {
   const handleVoiceInput = () => {
     if (isListening) {
       recognition.stop();
+      setIsListening(false);
+      handleSend(); // Send message when stopping the recognition
     } else {
       recognition.start();
+      setIsListening(true);
     }
   };
 
@@ -63,8 +66,8 @@ const ChatBot = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen max-w-md mx-auto p-4 bg-gray-100">
-      <div className="flex-1 overflow-y-auto p-4 bg-white rounded-lg shadow-md">
+    <div className="flex flex-col h-screen max-w-md mx-auto p-4 bg-gray-100 max-w-2xl">
+      <div className="flex-1 overflow-y-auto p-4  bg-slate-100 rounded-lg shadow-lg">
         {messages.map((msg, index) => (
           <div
             key={index}
@@ -100,7 +103,7 @@ const ChatBot = () => {
           onClick={handleVoiceInput}
           className={`ml-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition ${
             isListening ? "bg-red-500" : "bg-gray-700"
-          } text-white hover:bg-gray-800 transition`}
+          }`}
         >
           {isListening ? "Stop" : "Speak"}
         </button>

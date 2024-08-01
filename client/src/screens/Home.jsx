@@ -17,7 +17,7 @@ const Home = () => {
 
   useEffect(() => {
     fetchWeather();
-  }, [city]); // Re-run the effect when city changes
+  }, [city]);
 
   const fetchWeather = () => {
     if (city.trim() === "") {
@@ -44,14 +44,13 @@ const Home = () => {
   const displayWeatherInfo = () => {
     if (!weatherData) return null;
 
-    // Determine background style based on temperature
     let backgroundColor = "";
     if (weatherData.main.temp < 8) {
-      backgroundColor = "bg-blue-300"; // Light blue for cold weather
+      backgroundColor = "bg-blue-300";
     } else if (weatherData.main.temp > 20) {
-      backgroundColor = "bg-orange-300"; // Light orange for warm weather
+      backgroundColor = "bg-orange-300";
     } else {
-      backgroundColor = "bg-gray-300"; // Default background for moderate weather
+      backgroundColor = "bg-gray-300";
     }
 
     return (
@@ -83,53 +82,60 @@ const Home = () => {
   return (
     <>
       <section id="home" className="overflow-hidden max-w-full">
-        <div className="pt-10 relative flex md:flex-row flex-col-reverse md:items-end justify-center items-center">
-          <div
-            className="max-w-screen-2xl mx-auto p-5 sm:p-10 md:p-16"
-            data-aos="fade-down"
-          >
-            <h1 className="name text-teal-600 font-bold md:my-10">
-              {hero.firstName}{" "}
-              {/* <span className="text-dark_primary flex-wrap">{hero.LastName}</span> */}
+        {/* Main Content Section: Image and Name */}
+        <div className="pt-10 relative flex flex-col md:flex-row md:items-center justify-center max-w-screen-2xl container">
+          {/* Left Side: Name */}
+          <div className="flex-1 flex flex-col justify-center sm:p-10 md:p-16">
+            <h1 className="text-teal-600 font-bold text-4xl">
+              {hero.firstName}
             </h1>
-            <h6 className="text-dark_primary name text-3xl font-Inria flex-wrap">
+            <h6 className="text-dark_primary font-Inria mt-2">
               {hero.LastName}
             </h6>
-            <br />
-            <div className="border-stone-600 container max-w-screen-xl mx-auto p-8 bg-white rounded-md shadow-md">
-              <div className="mb-4">
-                <label
-                  htmlFor="cityInput"
-                  className="block text-sm font-semibold mb-2"
-                >
-                  Enter Your City Name:
-                </label>
-                <div className="flex items-center space-x-4">
-                  <input
-                    type="text"
-                    id="cityInput"
-                    value={city}
-                    onChange={handleCityChange}
-                    className="flex-grow p-3 border rounded-xl focus:outline-none focus:ring focus:border-green-300"
-                    placeholder="Jaisalmer"
-                  />
-                </div>
-              </div>
+          </div>
 
-              {error && <div className="mt-6 text-red-600">{error}</div>}
-              <div id="weatherInfo" className="mt-6 text-gray-800">
-                {displayWeatherInfo()}
-                <Link to="/weather">
-                  <button
-                    id="getWeatherBtn"
-                    onClick={fetchWeather}
-                    className="bg-blue-600 text-white p-3 rounded-md focus:ring focus:border-blue-300 w-40 mt-4"
-                  >
-                    Predict Weather
-                  </button>
-                </Link>
-              </div>
+          {/* Right Side: Image */}
+          <div className="flex-1 flex relative max-h-[calc(100vh-4rem)]">
+            <img
+              className="w-full h-full object-cover"
+              src="images/home2.png"
+              alt="Home"
+            />
+          </div>
+        </div>
+
+        <div className="border-stone-600 container max-w-screen-lg mx-auto p-8 bg-white rounded-md shadow-md mt-10">
+          <div className="mb-4">
+            <label
+              htmlFor="cityInput"
+              className="block text-sm font-semibold mb-2"
+            >
+              Enter Your City Name:
+            </label>
+            <div className="flex items-center space-x-4">
+              <input
+                type="text"
+                id="cityInput"
+                value={city}
+                onChange={handleCityChange}
+                className="flex-grow p-3 border rounded-xl focus:outline-none focus:ring focus:border-green-300"
+                placeholder="Jaisalmer"
+              />
             </div>
+          </div>
+
+          {error && <div className="mt-6 text-red-600">{error}</div>}
+          <div id="weatherInfo" className="mt-6 text-gray-800">
+            {displayWeatherInfo()}
+            <Link to="/weather">
+              <button
+                id="getWeatherBtn"
+                onClick={fetchWeather}
+                className="bg-blue-600 text-white p-3 rounded-md focus:ring focus:border-blue-300 w-40 mt-4"
+              >
+                Predict Weather
+              </button>
+            </Link>
           </div>
         </div>
         <div className="pt-10">
